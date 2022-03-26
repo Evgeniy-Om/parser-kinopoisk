@@ -1,7 +1,7 @@
 import { Entity } from 'typeorm'
 
 type Country = {
-    iso_3166_1: string,
+    iso_3166_1: string
     name?: string
 }
 @Entity()

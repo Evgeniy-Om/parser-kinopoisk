@@ -11,5 +11,4 @@ export function saveInDb(listFilms: FilmEntity[]) {
             console.log(i)
         }
     })
-
 }

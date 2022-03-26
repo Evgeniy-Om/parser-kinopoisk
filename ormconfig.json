@@ -4,11 +4,11 @@
    "port": 5432,
    "username": "postgres",
    "password": "1234",
-   "database": "typeorm",
-   "synchronize": true,
+   "database": "kinopoisk",
+   "synchronize": false,
    "logging": false,
    "entities": [
-      "src/entity/**/*.ts"
+      "src/entities/**/*.ts"
    ],
    "migrations": [
       "src/migration/**/*.ts"

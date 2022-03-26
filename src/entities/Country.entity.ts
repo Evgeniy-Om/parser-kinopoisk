@@ -1,11 +1,11 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm'
 
-@Entity()
+@Entity('country')
 export class CountryEntity {
 
-    @PrimaryColumn()
-    id: string
-
     @Column()
-    name?: string
+    id?: string
+
+    @PrimaryColumn()
+    name: string
 }

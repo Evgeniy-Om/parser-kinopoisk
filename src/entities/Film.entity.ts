@@ -2,7 +2,7 @@ import { Column, Entity, JoinTable, ManyToMany, PrimaryColumn } from 'typeorm'
 import { GenreEntity } from './Genre.entity'
 import { CountryEntity } from './Country.entity'
 
-@Entity()
+@Entity('film')
 export class FilmEntity {
 
     @PrimaryColumn()
@@ -11,32 +11,51 @@ export class FilmEntity {
     @Column({nullable: true, default: null})
     imdb_id: string
 
-    @Column()
-    original_language: string
-
-    @Column()
-    original_title: string
-
-    @Column()
-    title: string
+    @Column({nullable: true, default: null})
+    title_original: string
 
     @Column({nullable: true, default: null})
-    overview: string
-
-    @Column({type: 'numeric'})
-    popularity: number
+    title_ru: string
 
     @Column({nullable: true, default: null})
-    poster_path: string
+    description: string
+
+
+    @Column({nullable: true, default: null})
+    poster_url: string
+
+    @Column({nullable: true, default: null})
+    poster_url_preview: string
+
+    @Column({nullable: true, default: null})
+    year: number
+
+    @Column({type: 'float', nullable: true, default: null})
+    rating_kinopoisk: number
+
+    @Column({nullable: true, default: null})
+    rating_kinopoisk_vote_count: number
+
+    @Column({type: 'float', nullable: true, default: null})
+    rating_imdb: number
+
+    @Column({nullable: true, default: null})
+    rating_imdb_vote_count: number
+
+    @Column({nullable: true, default: null})
+    web_url: string
 
     @Column()
-    release_date: Date
-
-    @Column({type: 'numeric'})
-    vote_average: number
+    type: string
 
     @Column()
-    vote_count: number
+    short_film: boolean
+
+    @Column()
+    serial: boolean
+
+    @Column()
+    last_sync: Date
 
     @ManyToMany(() => CountryEntity, {nullable: true})
     @JoinTable({name: 'films_countries'})
@@ -46,6 +65,4 @@ export class FilmEntity {
     @JoinTable({name: 'films_genres'})
     genres: GenreEntity[]
 
-    @Column({default: false})
-    is_updated: boolean
 }

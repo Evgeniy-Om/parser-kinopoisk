@@ -1,11 +1,11 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm'
 
-@Entity()
+@Entity('genre')
 export class GenreEntity {
 
-    @PrimaryColumn()
-    id: number
-
     @Column()
-    name?: string
+    id?: number
+
+    @PrimaryColumn()
+    name: string
 }
